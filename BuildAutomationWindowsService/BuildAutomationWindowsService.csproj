@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>dotnet-BuildAutomationWindowsService-11488EFD-E70C-40C0-A94B-54B999170989</UserSecretsId>
     <PublishSingleFile>true</PublishSingleFile>
     <OutputType>exe</OutputType>
   </PropertyGroup>
@@ -19,6 +18,6 @@
   </Target>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="sc.exe query state=all | findstr $(ProjectName)&#xD;&#xA;if %25errorlevel%25 equ 0 (&#xD;&#xA;sc.exe stop $(ProjectName)&#xD;&#xA;sc.exe delete $(ProjectName)&#xD;&#xA;) else (&#xD;&#xA;echo exit&#xD;&#xA;exit 0&#xD;&#xA;)" />
+    <Exec Command="sc.exe query state=all | findstr $(ProjectName)&#xD;&#xA;if %25errorlevel%25 equ 0 (&#xD;&#xA;sc.exe stop $(ProjectName)&#xD;&#xA;sc.exe delete $(ProjectName)&#xD;&#xA;) else (&#xD;&#xA;exit 0&#xD;&#xA;)" />
   </Target>
 </Project>
